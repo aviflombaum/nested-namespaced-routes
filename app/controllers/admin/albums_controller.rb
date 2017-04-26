@@ -1,6 +1,6 @@
 class Admin::AlbumsController < ApplicationController
-
-
+  before_action :admin_login_required
+  
   def destroy
     @album = Album.find(params[:id])
     
