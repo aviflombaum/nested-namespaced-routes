@@ -1,0 +1,11 @@
+<h1><%= @album.name %></h1>
+
+<ul>
+  <% @album.pictures.each do |picture| %>
+  <li>
+    <div>
+      <img src="<%= picture.url %>" width="300px" />
+    </div>
+  </li>
+  <% end %>
+</ul>
