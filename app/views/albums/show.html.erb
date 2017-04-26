@@ -3,7 +3,23 @@
 <ul>
   <% @album.pictures.each do |picture| %>
   <li>
-    <%= image_tag picture.url, :width => "300px" %>
+    <%= link_to(image_tag(picture.url, :width => "300px"), picture_path(picture)) %>
   </li>
   <% end %>
 </ul>
+
+<h2>Add a Picture</h2>
+              
+<%= form_for([@album, Picture.new]) do |f| %>
+<%#= form_for(Picture.new, :url => album_pictures_path(@album)) do |f| %>
+  <p>
+    <%= f.text_field :url %>
+  </p>
+
+  <p><%= f.submit %></p>
+<% end %>
+
+/pictures/1 -> That there is a picture #1
+/albums/3/pictures/1 -> That picture #1 belongs to Album #3
+POST /pictures -> Please upload a picture !!!!TO WHICH ALBUM!!!!
+POST /albums/3/pictures -> Please upload a picture to Album 3!!!! YA!!!

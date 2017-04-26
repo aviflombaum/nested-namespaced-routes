@@ -14,6 +14,10 @@ B. Delete a Picture in an Album
 
 3. Bonus
 
+How would you structure your form if it was in a _partial where the update action would needed the picture_id
+
 A. Clean Up Routes
 
 B. User Authentication/Make Admin Real
+
+C. Namespace an API Version

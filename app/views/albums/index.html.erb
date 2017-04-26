@@ -2,6 +2,8 @@
 
 <ul>
   <% @albums.each do |album| %>
-  <li><%= link_to album.name, album_path(album) %></li>
+  <li><%= link_to album.name, album_path(album) %> - <%= link_to "X", admin_album_path(album), :method => :delete %> </li>
   <% end %>
 </ul>
+
+<p><%= flash[:notice] %></p>

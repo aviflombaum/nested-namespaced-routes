@@ -1,0 +1,16 @@
+<p>
+  <%= image_tag @picture.url %>
+</p>
+
+<h2>Comments</h2>
+<ul>
+  <% @picture.comments.each do |comment| %>
+  <li><%= comment.body %></li>
+  <% end %>
+</ul>
+
+<h2>Add a Comment</h2>
+
+<%= form_for([@picture, Comment.new]) do |f| %>
+
+<% end %>
